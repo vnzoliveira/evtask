@@ -15,7 +15,7 @@
             <div class="instruction-box">
                 <h2>Credit Card checkout</h2>
                 <p>In order to conclude your purchase and verify your credit
-                    card, wee need you to enter the following information:
+                    card, we need you to enter the following information:
                 </p>
             </div>
             <div class="divisor"></div>
