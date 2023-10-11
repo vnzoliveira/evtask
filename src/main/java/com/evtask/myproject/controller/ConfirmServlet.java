@@ -5,7 +5,6 @@ import com.evtask.myproject.entities.exception.CVVException;
 import com.evtask.myproject.entities.exception.ExpiryDateException;
 import com.evtask.myproject.entities.exception.InvalidCardException;
 import com.evtask.myproject.util.Util;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,8 +23,6 @@ public class ConfirmServlet extends HttpServlet {
      *
      * @param response an {@link HttpServletResponse} object that contains the response the servlet sends to the client
      *
-     * @throws ServletException
-     * @throws IOException
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         cleanSessions(request);
@@ -34,12 +31,16 @@ public class ConfirmServlet extends HttpServlet {
         creditCard.setCardNum(request.getParameter("cardNum"));
         creditCard.setCvv(request.getParameter("cvv"));
         creditCard.setExpirationDateString(util.formatExpiryDate(request.getParameter("expiry-date")));
-        boolean success = false;
+        boolean success;
         boolean cardNumCheck = false;
+        boolean lastDigitCheck = false;
         boolean CvvCheck = false;
         boolean ExpiryDateCheck = false;
         try {
             cardNumCheck = creditCard.verifyPanNumber();
+            if(cardNumCheck){
+                lastDigitCheck = creditCard.CardNumDigitCheck();
+            }
         }
         catch (InvalidCardException e){
             request.getSession().setAttribute("InvalidCardMessage", e.getMessage());
@@ -56,7 +57,7 @@ public class ConfirmServlet extends HttpServlet {
         catch (ExpiryDateException e){
             request.getSession().setAttribute("InvalidExpiryDateMessage", e.getMessage());
         }
-        success = cardNumCheck && CvvCheck && ExpiryDateCheck;
+        success = cardNumCheck && CvvCheck && ExpiryDateCheck && lastDigitCheck;
         if (success){
             request.getRequestDispatcher("/success.jsp").forward(request,response);
         }
