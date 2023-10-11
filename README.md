@@ -58,9 +58,9 @@ Since **IntelliJ** only creates Servlet projects with **Maven** or **Gradle** au
 to run this web-app is necessary to clean install it with one of them two (This project uses **Maven**)
 and send the **.WAR** file to **Apache Tomcat** webapp folder.<br><br>
 To facilitate this sketchy setup, Just execute the following files located in the project folder:
-* `runevtask.bat`, to run the web-app.
-* `maveninstall.bat`, to build the project compile files with **Maven**.
-* `evtaskshutdown.bat`, to shut down the server.<br><br>
+1. `maveninstall.bat`, to build the project compile files with **Maven**.
+2. `runevtask.bat`, to run the web-app.
+3. `evtaskshutdown.bat`, to shut down the server.<br><br>
 * **BE AWARE** that those .bat files have important variables with folder paths, If you followed my suggestions
   everything should be fine. However, if you altered any path in the pre-requisites installation, **DO THIS**:<br><br>
     * In both `runevtask.bat` and `evtaskshutdown.bat`, open the **.bat** file and change
