@@ -1,6 +1,6 @@
 @echo off
 ::Configs
-set TOMCAT_DIR=C:\Program Files\apache-tomcat-10.1.13
+set TOMCAT_DIR=C:\Program Files\apache-tomcat-10.1.14
 set APP_NAME=evtask
 set WAR_PATH=%~dp0\target\evtask.war
 
