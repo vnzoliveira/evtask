@@ -15,8 +15,8 @@ local machine must have:
 <hr>
 
 ## 🚀 Installing project dependencies
-First, to run this webapp, as mentioned above, you need to install 3 core requisites
-below you will find the installation guide of each of those requisites.
+First, to run this webapp, as mentioned above, you need to install 3 core requisites.
+Here you will find the installation guide to each of those requisites.
 
 <br>
 
