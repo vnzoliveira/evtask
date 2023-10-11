@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-y: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to right, #bf7ef5,#5cf55c);
+}
+
+.main-wrapper{
+    margin: 30vh auto;
+    width: 50%;
+}
+
+.card-box{
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid rgba(0,0,0,0.30);
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.33);
+    background-color: #f8f8f8;
+}
+
+.instruction-box{
+    padding: 1rem 1rem;
+    width: 55%;
+}
+
+.instruction-box p{
+    margin-top: 0.8rem;
+    width: 80%;
+    font-size: 1.2em;
+}
+
+.instruction-box h2{
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.form-box{
+    width: 45%;
+    padding: 1rem 1rem;
+}
+
+
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form input{
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.2rem;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.30);
+    transition: .5s;
+    background-color: #f8f8f8;
+}
+
+.form label{
+    margin-top: 0.5rem;
+}
+.form input:focus{
+    outline: none;
+    border-color: rgb(126, 245, 126);
+}
+
+.error-box{
+    font-size: 0.8em;
+    color: rgb(255, 50, 50);
+    font-weight: 300;
+}
+
+.btn{
+    color: #ffffff;
+    background-color: rgb(126, 245, 126) !important;
+    transition: .5s;
+    border-color: rgb(96, 252, 96);
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(111, 211, 111);
+    border-color: rgb(64, 170, 64);
+}
+
+input:disabled{
+    background-color: #dadada !important;
+    border-color: #bdbdbd !important;
+}
+
+.divisor{
+    border-left: 1px solid rgba(0,0,0,0.30);
+}
