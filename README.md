@@ -40,7 +40,7 @@ Here you will find the installation guide to each of those requisites.
     * In the same window, go to `System Variables`, click in `Path` and **Edit**
         * Click in **New**
         * Add `C:/YourPathToMavenExtractedFolder/bin`
-          <br>Exemple: `C:/Program Files/apache-maven-3.9.5/bin`
+          <br>Example: `C:/Program Files/apache-maven-3.9.5/bin`
         * **Done**.
 
 <br>
