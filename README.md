@@ -34,7 +34,7 @@ Here you will find the installation guide to each of those requisites.
     * Extract the **.zip** file in your preferred directory, I suggest installing it in `C:\Program Files`<br><br>
     * Go to `Edit the system environment variables>Environment Variables...`<br><br>
     * in `User variables` click **New** and:
-        * Set **Variable Name ** as `MAVEN_HOME`
+        * Set **Variable Name** as `MAVEN_HOME`
         * Set **Variable Value** as `C:/YourPathToMavenExtractedFolder`,
           <br>Example: `C:/Program Files/apache-maven-3.9.5`<br><br>
     * In the same window, go to `System Variables`, click in `Path` and **Edit**
