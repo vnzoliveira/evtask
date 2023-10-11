@@ -10,7 +10,7 @@ Before trying to run this web-app, there are some pre-requisites that your
 local machine must have:
 * You need to have `Java SE Development Kit 17` installed.
 * preferable, the most recent version of `Apache Maven` installed and configured.
-* At last, to run it on localhost server, you need to have `Apache Tomcat 10.1.13`.
+* At last, to run it on localhost server, you need to have `Apache Tomcat 10.1.14`.
 
 <hr>
 
