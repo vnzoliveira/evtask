@@ -5,8 +5,8 @@
 
 <hr>
 
-## 💻 Pre-requisites
-Before trying to run this web-app, there are some pre-requisites that your
+## 💻 Prerequisites
+Before trying to run this web-app, there are some prerequisites that your
 local machine must have:
 * You need to have `Java SE Development Kit 17` installed.
 * preferable, the most recent version of `Apache Maven` installed and configured.
