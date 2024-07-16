@@ -5,6 +5,7 @@ import com.evtask.myproject.entities.exception.ExpiryDateException;
 import com.evtask.myproject.entities.exception.InvalidCardException;
 
 import java.time.YearMonth;
+import java.util.Arrays;
 
 /*
 Class that represents the Object CreditCard in our little app.
@@ -77,24 +78,35 @@ public class CreditCard {
      */
     protected String getCalculatedCheckDigit(){
         int [] digits = formatCardStringToInt();
-        for (int i = digits.length - 1; i >= 0; i -= 2){
-            digits[i] += digits[i];
-            if (digits[i] >= 10){
-                digits[i] = digits[i] - 9;
-            }
-        }
         int sum = 0;
-        for (int i : digits) {
-            sum += i;
+
+        //System.out.println("Initial Digits: " + Arrays.toString(digits));
+
+        for (int i = digits.length - 2; i >= 0; i -= 2){
+            int doubledValue = digits[i] * 2;
+            if(doubledValue > 9){
+                doubledValue -= 9;
+            }
+            sum += doubledValue;
+            //System.out.println("Digit at index " + i + " doubled and adjusted: " + doubledValue);
         }
-        sum *= 9;
-        String digit = String.valueOf(sum);
-        return digit.substring(digit.length() - 1);
+
+        for (int i = digits.length - 1; i >= 0; i -= 2){
+            sum += digits[i];
+            //System.out.println("Digit at index " + i + ": " + digits[i]);
+        }
+
+        //System.out.println("Sum of digits: " + sum);
+
+        int checkDigit = (sum * 9) % 10;
+        //System.out.println("Check digit: " + checkDigit);
+
+        return String.valueOf(checkDigit);
     }
 
     protected int[] formatCardStringToInt() {
         int[] digits = new int[cardNum.length()];
-        for (int i = 0; i < cardNum.length(); i++) {
+        for (int i = 0; i < cardNum.length() - 1; i++) {
             digits[i] = Character.getNumericValue(cardNum.charAt(i));
         }
         return digits;
